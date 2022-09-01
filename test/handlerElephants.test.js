@@ -13,7 +13,7 @@ describe('Testes da função HandlerElephants', () => {
   it('Testa se o parâmetro está vazio', () => {
     expect(handlerElephants(undefined)).toBeUndefined();
   });
-//   it('Testa a popularidade dos elefantes', () => {
-//     expect(handlerElephants('popularity')).toBe(5);
-//   });
+  it('Testa a popularidade dos elefantes', () => {
+    expect(handlerElephants('popularity')).toBe(5);
+  });
 });
