@@ -27,4 +27,10 @@ describe('Testes da função getOpeningHours', () => {
     .toThrow('The minutes must be between 0 and 59'));
   it('Testa se os horários estão com a formatação incorreta', () => expect(() => getOpeningHours('Monday', '04:20-MJ'))
     .toThrow('The abbreviation must be \'AM\' or \'PM\''));
+  it('Testa se a hora é representada por números', () => expect(() => getOpeningHours('Wednesday', '0A:00-AM'))
+    .toThrow('The hour should represent a number'));
+  it('Testa se os minutos são representados por números', () => expect(() => getOpeningHours('Wednesday', '08:S0-AM'))
+    .toThrow('The minutes should represent a number'));
+  it('Testa se a hora está entre 0 e 12', () => expect(() => getOpeningHours('Tuesday', '15:00-PM'))
+    .toThrow('The hour must be between 0 and 12'));
 });
